@@ -4,10 +4,12 @@
 class WT901C{
   public:
   WT901C(byte port);
+  WT901C(HardwareSerial* serial);
 
   void begin(int baud, int rx, int tx);
   void update();
 
+  // A struct that contains the three variables(x,y,z) of acceleration
   struct AccelerationReading{
     double Ax;
     double Ay;
@@ -17,6 +19,7 @@ class WT901C{
     double getZ();
   };
 
+  // A struct that contains the three variables(x,y,z) of angular velocity
   struct AngularVelocityReading{
     double Wx;
     double Wy;
@@ -26,6 +29,7 @@ class WT901C{
     double getZ();
   };
 
+  // A struct that contains the three variables(x,y,z) of rotation 
   struct RotationReading{
     double Rx;
     double Ry;
@@ -34,6 +38,8 @@ class WT901C{
     double getY();
     double getZ();
   };
+
+  // A struct that contains the three variables(x,y,z) of magnetic field strenght
   struct MagnetometerReading{
     double Mx;
     double My;
