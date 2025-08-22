@@ -1,13 +1,15 @@
 #include<Arduino.h>
 #include<HardwareSerial.h>
-
+#include<string>
 class WT901C{
   public:
   WT901C(byte port);
+  WT901C(HardwareSerial* serial);
 
   void begin(int baud, int rx, int tx);
   void update();
 
+  // A struct that contains the three variables(x,y,z) of acceleration
   struct AccelerationReading{
     double Ax;
     double Ay;
@@ -15,8 +17,10 @@ class WT901C{
     double getX();
     double getY();
     double getZ();
+    char* format();
   };
 
+  // A struct that contains the three variables(x,y,z) of angular velocity
   struct AngularVelocityReading{
     double Wx;
     double Wy;
@@ -24,8 +28,10 @@ class WT901C{
     double getX();
     double getY();
     double getZ();
+    char* format();
   };
 
+  // A struct that contains the three variables(x,y,z) of rotation 
   struct RotationReading{
     double Rx;
     double Ry;
@@ -33,7 +39,10 @@ class WT901C{
     double getX();
     double getY();
     double getZ();
+    char* format();
   };
+
+  // A struct that contains the three variables(x,y,z) of magnetic field strenght
   struct MagnetometerReading{
     double Mx;
     double My;
@@ -41,13 +50,14 @@ class WT901C{
     double getX();
     double getY();
     double getZ();
+    char* format(); 
   };
 
-  AccelerationReading getAccelerationReadings();
-  RotationReading getRotationReadings();
-  MagnetometerReading getMagneticFieldReadings();
-  AngularVelocityReading getAngularVelocityReadings();
-  double getTemperature();
+  AccelerationReading getAccelerationReading();
+  RotationReading getRotationReading();
+  MagnetometerReading getMagneticFieldReading();
+  AngularVelocityReading getAngularVelocityReading();
+  double getTemperatureReading();
 
   private:
   //HardwareSerial SerialWIT;
