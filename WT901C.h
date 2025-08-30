@@ -47,7 +47,7 @@ class WT901C{
     double getZ();
 
     // Returns a char array that is formatted in this format : 
-    // X : xValue m/s, Y : yValue m/s2, Z : zValue m/s2
+    // X : xValue g, Y : yValue g, Z : zValue g
     char* format();
   };
 

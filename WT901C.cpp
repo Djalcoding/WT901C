@@ -2,6 +2,8 @@
 #include<Arduino.h>
 #include<HardwareSerial.h>
 #include<stdio.h>
+#include <cstdio>
+
 WT901C::WT901C(byte port) {
     switch (port)
     {
@@ -21,7 +23,7 @@ double WT901C::AccelerationReading::getZ() {return Az;}
 
 char* WT901C::AccelerationReading::format() {
     static char formatted[64];
-    std::sprintf(formatted, "X : %.4f m/s2, Y : %.4f m/s2, Z : %.4f m/s2", getX(), getY(), getZ());
+    std::sprintf(formatted, "X : %.4f g, Y : %.4f g, Z : %.4f g", getX(), getY(), getZ());
     return formatted;
 }
 
