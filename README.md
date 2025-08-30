@@ -27,4 +27,5 @@ This is an unoffical arduino library for the ESP-32 (support for other micro-con
 - [] Quaternion Support
 - [] Fixed Acceleration and Fixed Magnetic Field reading
 - [] Gravity removal
+- [] Unit conversion
   
