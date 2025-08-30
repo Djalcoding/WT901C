@@ -8,7 +8,7 @@ This is an unoffical arduino library for the ESP-32 (support for other micro-con
 2. Open arduino IDE, any version is ok
 3. Go to Sketch, Include Library, Add .ZIP library
 4. Choose the .zip file you just installed
-5. You can now use the library
+5. You now have the library installed
 ## Usage
   <img width="1359" height="667" alt="image" src="https://github.com/user-attachments/assets/2865fceb-7e4b-4ffc-a58f-1f1bd4807e07" />
 
